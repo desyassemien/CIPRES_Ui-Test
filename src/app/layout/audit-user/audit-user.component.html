@@ -1,0 +1,93 @@
+<!-- Main Wrapper -->
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+	<!-- Header -->
+	<app-admin-header></app-admin-header>
+	<!-- /Header -->
+	<div class="app-main">
+		
+		<!-- Sidebar -->
+		<app-admin-side-bar></app-admin-side-bar>
+		<!-- /Sidebar -->
+
+		<!-- Page Wrapper -->
+		<div class="app-main__outer">
+      <!--contenr  -->
+      <div class="app-main__inner">
+          <div class="app-page-title">
+            <div class="page-title-wrapper"> 
+              <div class="page-title-heading">
+                <div>
+                  <img src="assets/images/sidebar/icons/audit2.png" style="height: 40px; width: 40px; border-radius:5px;">
+                </div>
+                <div>
+                  Audit
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card card-table">
+                      <div class="card-header" style="background-color:#FAFAFA">
+                          <h4 class="card-title" style="text-transform:initial; font-weight: bold; text-align: center;">Historique des Utilisateurs connectés</h4>
+                      </div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                            <mat-form-field >
+                              <mat-label style="margin-left: 20px;" class="filtre">Filtre</mat-label>
+                              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. admin" #input>
+                            </mat-form-field>
+                            
+                                  <table class="table table-center mb-0" mat-table [dataSource]="dataSource">
+                                
+                                    <!-- Position Column -->
+                                    <ng-container matColumnDef="Utilisateurs">
+                                      <th mat-header-cell *matHeaderCellDef style="color: black;font-weight:bold;font-size:15px;">Utilisateurs </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="Actions">
+                                      <th mat-header-cell *matHeaderCellDef style="color: black;font-weight:bold;font-size:15px;"> Actions </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.actions}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Weight Column -->
+                                    <ng-container matColumnDef="Status">
+                                      <th mat-header-cell *matHeaderCellDef style="color: black;font-weight:bold;font-size:15px;"> Status </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Symbol Column -->
+                                    <ng-container matColumnDef="Date">
+                                      <th mat-header-cell *matHeaderCellDef style="color: black;font-weight:bold;font-size:15px;">Date </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                                    </ng-container>
+
+                                    <ng-container matColumnDef="Heure" >
+                                      <th mat-header-cell *matHeaderCellDef style="color: black;font-weight:bold;font-size:15px;">Heure </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.heure}} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                  </table>
+                                  <mat-paginator class="mat-paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                              
+                          </div>
+                      </div>
+                </div>        
+          </div>					 
+        </div>							
+      </div>
+     </div>
+      <!-- content -->
+    </div>
+		<!-- /Page Wrapper -->
+	
+	
+
+</div>
+<!-- /Main Wrapper -->	

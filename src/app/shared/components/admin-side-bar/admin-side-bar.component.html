@@ -1,0 +1,40 @@
+<div class="app-sidebar sidebar-shadow" >
+    <!--===MENU===-->
+    <ng-container>
+        <div class="scrollbar-sidebar">
+            <div class="app-sidebar__inner"> 
+                <ul class="vertical-nav-menu">
+                    
+                    <li class="sidebar-li">
+                        <a [routerLink]="['/layout/admin']"routerLinkActive="active">
+                            <img src="assets/images/sidebar/icons/assujettis.png" class="sidebar-icon metismenu-icon" />
+                           Utilisateurs
+                        </a> 
+                    </li>
+    
+                    <li class="sidebar-li">
+                        <a [routerLink]="['/layout/audit']"routerLinkActive="active">
+                         <img src="assets/images/sidebar/icons/audit-img.png" class="sidebar-icon metismenu-icon" />
+                            Audit
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="row" style="width: 100% !important; margin: auto; margin-top: 30px !important;">
+                    <div class="col-xs-12 col-md-12" style="padding-left: 1px !important; padding-right: 1px !important;padding-top:-30px !important">
+                        <div class="calendar-card" style="margin-top:-25px; padding-top:-30px ">
+                                <mat-calendar appearance="fill">
+                                        <mat-label>Afficher le calendrier</mat-label>
+                                        <input matInput [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                </mat-calendar>       
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </ng-container>
+    
+</div>

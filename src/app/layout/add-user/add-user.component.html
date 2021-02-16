@@ -1,0 +1,227 @@
+<!-- Main Wrapper -->
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+	<!-- Header -->
+	<app-admin-header></app-admin-header>
+	<!-- /Header -->
+	<div class="app-main"> 
+		
+		<!-- Sidebar -->  
+		<app-admin-side-bar></app-admin-side-bar> 
+		<!-- /Sidebar -->
+
+		<!-- Page Wrapper -->
+		<div class="app-main__outer">
+      <!--contenr  -->
+      <div class="app-main__inner">
+        <section class="">
+            <!--Ajout utilisateur -->
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header" style="padding-top:10px; padding-bottom:10px; background:#00A651;">
+                    <h5 class="text-center" style="color:white !important; text-transform: initial;font-size:16px;font-weight:bold; font-family: Roboto;"> Enregistrement d'un nouvel utilisateur et son rôle</h5>
+                </div>
+          <div class="card-body">
+                <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item" style="background-color:#EFEFEF">
+                        <a (click)="nextStep(1)" class="nav-link {{steps === 1 ? 'active' : ''}}" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Utilisateur</a>
+                    </li>
+                    <li class="nav-item"style="background-color:#EFEFEF">
+                        <a (click)="nextStep(2)" class="nav-link {{steps === 2 ? 'active' : ''}}" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Rôle</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade {{steps === 1 ? 'show active' : ''}}" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <form class="row" name="form" (ngSubmit)="f.form.valid && onSubmit()  " #f="ngForm" novalidate>
+                                    <!--  -->
+                                    <div class="form-group col-md-6">
+                                      <label for="pays">Pays</label>
+                                      <select class="form-control"  name="pays"
+                                      [(ngModel)]="form.pays" 
+                                      required
+                                      #pays="ngModel">
+                                        <option *ngFor="let pays of paysAll">{{pays}}</option>
+                                      </select>
+                                      <div class="alert-danger" *ngIf="f.submitted && pays.invalid">
+                                        <div *ngIf="pays.errors.required">pays is required</div>
+                                      </div>
+                                    </div>
+                              
+                                    <!--  -->
+                                    <div class="form-group col-md-6">
+                                      <label for="departement">Departement</label>
+                                      <select class="form-control" name="departement"
+                                      [(ngModel)]="form.departement" 
+                                      required 
+                                      #departement="ngModel">
+                                        <option *ngFor="let departement of departements">{{departement}}</option>
+                                      </select>
+                                      <div class="alert-danger" *ngIf="f.submitted && departement.invalid">
+                                        <div *ngIf="departement.errors.required">Le departement est requis</div>
+                                      </div>
+                                    </div>
+                              
+                                    <!--  -->
+                                      <div class="form-group col-md-6">
+                                        <label for="username">Username</label>
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="username"
+                                          [(ngModel)]="form.username"
+                                          required
+                                          minlength="3"
+                                          maxlength="20"
+                                          #username="ngModel"
+                                        />
+                                        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+                                          <div *ngIf="username.errors.required">Nom utilisateur est requis</div>
+                                          <div *ngIf="username.errors.minlength">
+                                            Username must be at least 3 characters
+                                          </div>
+                                          <div *ngIf="username.errors.maxlength">
+                                            Username must be at most 20 characters
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group col-md-6">
+                                        <label for="email">Email</label>
+                                        <input
+                                          type="email"
+                                          class="form-control"
+                                          name="email"
+                                          [(ngModel)]="form.email"
+                                          required
+                                          #email="ngModel"
+                                        />
+                                        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                                          <div *ngIf="email.errors.required">L'email est requis</div>
+                                          <div *ngIf="email.errors.email">
+                                            L'email doit être une adresse email valide
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group col-md-6">
+                                        <label for="password">Mot de passe</label>
+                                        <input type="password"
+                                          class="form-control"
+                                          name="password"
+                                          [(ngModel)]="form.password"
+                                          required
+                                          minlength="6"
+                                          #password="ngModel"
+                                        />
+                                        <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+                                          {{objetview(password.errors)}}
+                                          <div *ngIf="objetview(password.errors)">Password is required</div>
+                                          <div *ngIf="password.errors.minlength?password.errors.minlength:false"> 
+                                            Password must be at least 6 characters
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- Repassword -->
+                                      <div class="form-group col-md-6">
+                                          <label for="repassword">Retapez le mot de passe</label>
+                                          <input
+                                            type="password"
+                                            class="form-control"
+                                            name="repassword"
+                                            [(ngModel)]="form.repassword"
+                                            required
+                                            minlength="8"
+                                            #repassword="ngModel"
+                                          />
+                                          <div class="alert-danger" *ngIf="f.submitted && repassword.invalid">
+                                            <div *ngIf="repassword.errors.required ">confirmation de mot de passe requise</div>
+                                            <div *ngIf="form.password != form.repassword" >La confirmation est incorreste</div>
+                                            <div *ngIf="repassword.errors.minlength">
+                                            Le mot de passe doit contenir 8 caractères
+                                            </div>
+                                          </div>
+                                    </div>
+
+                                      <div class="form-group col-md-12 text-right">
+                                        <a  routerLink="/layout/admin" class="btn btn-primary">Retour</a>                                   
+                                        <button (click)="nextStep(2)" class="btn btn-primary" style="margin-left: 10px" id="suivant">Suivant</button>
+                                      </div>
+                                
+                                      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                                        Echec de l'enregistrement!<br />{{ errorMessage }}
+                                      </div>
+                            </form>
+
+                            <div class="alert alert-success" *ngIf="isSuccessful">
+                              Your registration is successful!
+                            </div>
+                    </div>
+                    <!-- Ajout role -->
+              <div class="tab-pane fade {{steps === 2 ? 'show active' : ''}}" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                      <form
+                      name="formRole"
+                      (ngSubmit)="fRole.form.valid && onSubmitRole()"
+                      #fRole="ngForm"
+                      >
+                      <!--  -->
+                      <div class="form-group">
+                        <label for="usernameRole">Utilisateurs ajoutés</label>
+                        <select class="form-control"  name="usernameRole"
+                        [(ngModel)]="formRole.usernameRole" 
+                        required 
+                        #usernameRole="ngModel" >
+                        <option>Selectionner l'utilisateur</option>
+                          <option *ngFor="let userR of usernameAll">{{userR}}</option>
+                        </select>
+                        <div class="alert-danger" *ngIf="fRole.submitted && usernameRole.invalid">
+                            <div *ngIf="usernameRole.errors.required||formRole.usernameRole =='selectionner utilisateur'">Selectionnez un utilisateur</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="roleName">Rôle</label>
+                        <!-- Multi Select -->
+                        <ng-multiselect-dropdown
+                         #roleName="ngModel"
+                         name="roleName"
+                        [placeholder]="'Selectionner au moins un rôle'"
+                        [settings]="dropdownSettings"
+                        [data]="dropdownList"
+                        [(ngModel)]="selectedItems"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                      >       
+                     </ng-multiselect-dropdown>                
+                
+                        <div class="alert-danger" *ngIf="fRole.submitted && roleName.invalid">
+                          <div *ngIf="roleName.errors.required">Selectionnez un rôle</div>
+                        </div>
+                      </div>
+            
+                        <div class="form-group col-md-12 text-right">
+                          <button type="button" (click)="nextStep(1)" class="btn btn-primary">Précedent</button>
+                          <button id="confirmer" class="btn btn-primary" style="margin-left: 10px">Confirmer</button>
+                        </div>
+                  
+                        <div class="alert alert-warning" *ngIf="fRole.submitted && isRoleAddFailed">
+                          Echec d'attribution du rôle!<br/>{{ errorRoleAddMessage }}
+                        </div>
+                      </form>
+                      <div class="alert alert-success" *ngIf="isSuccessRoleAdd">
+                        Rôle attribué avec succès!
+                      </div>
+              </div>
+                  </div>       
+                </div>
+              </div>
+            </div>
+            <!-- Ajout role -->
+            
+        </section>
+      </div>
+      <!-- content -->
+		</div>
+		<!-- /Page Wrapper -->
+	</div>
+</div>
+<!-- /Main Wrapper -->	
+

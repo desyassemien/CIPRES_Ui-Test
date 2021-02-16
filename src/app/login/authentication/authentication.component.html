@@ -1,0 +1,287 @@
+<div class="app-container app-theme-white body-tabs-shadow">
+    <div class="app-container">
+      <div *ngIf="truePage">
+           <div class="h-100">
+            <div class="h-100 no-gutters row">
+                
+                <div class="d-none d-lg-block col-lg-4">
+                    <div class="slider-light">
+                        <div class="slick-slider">
+                            <div>
+                                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                                    <div class="slide-img-bg" style="background-image: url('assets/images/originals/cnps3.png');"></div>
+                                    <div class="slider-content">
+                                        <h3 style="text-transform: uppercase !important;">&nbsp;</h3>
+                                        <p style="font-size: 20px !important;">
+                                            &nbsp;
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                                    <div class="slide-img-bg" style="background-image: url('assets/images/originals/cnps2.png');"></div>
+                                    <div class="slider-content">
+                                        <h3 style="text-transform: uppercase !important;">&nbsp;</h3>
+                                        <p style="font-size: 20px !important;">
+                                            &nbsp;
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                                    <div class="slide-img-bg" style="background-image: url('assets/images/originals/cnps1.png');"></div>
+                                    <div class="slider-content">
+                                        <h3 style="text-transform: uppercase !important;">&nbsp;</h3>
+                                        <p style="font-size: 20px !important;">
+                                            &nbsp;
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
+                    <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+                        <div class="row" style="width: 100% !important; margin: auto !important; border-bottom:solid darkorange 2px !important;">
+                            <div class="col-xs-6 col-md-4" style="padding-right: 1px !important; padding-left: 1px !important;">
+                                <img src="assets/images/logo/logo1.png" alt="" class="img-fluid responsive card-img" style="vertical-align: middle !important;">
+                            </div>
+                            <div class="col-xs-6 col-md-8">
+                                <!--<h2 style="margin-bottom: 0 !important;" style="color: darkorange !important; font-weight: bold !important;">CIPRES </h2>
+                                <h6>Conférence Interafricaine de Prévoyance Sociale</h6>-->
+                            </div>
+                        </div>
+
+                        <div class="app-logo"></div>
+                        <h4 class="mb-0">
+                            <span class="d-block">&nbsp;</span>
+                            <span style="font-size: 18px !important; text-transform: uppercase !important; font-weight: bold !important;">Ouverture de session</span></h4>
+                        <h6 class="mt-3">&nbsp;</h6>
+                        <div class="divider row"></div>
+                        <div>
+                            <form  #f="ngForm">
+
+                                <!--Formulaire d'authentification-->
+                                <ng-container>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="position-relative form-group">
+                                                <label for="usernameTxt" class="">Nom utilisateur</label>
+                                                <input required id="usernameTxt" name="username" [(ngModel)]="loginData.username" placeholder="Entrez votre nom d'utilisateur" type="text" class="form-control" style="border-radius: 20px !important;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="position-relative form-group">
+                                                <label for="passwordTxt" class="">Mot de passe</label>
+                                                <input required id="passwordTxt" name="password" [(ngModel)]="loginData.password" placeholder="Entrez votre mot de passe" type="password" class="form-control" 
+                                                style="border-radius: 20px !important;" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                
+
+                                <!--Progression d'authentification-->
+                                <ng-container>
+                                    <div class="position-relative form-check">
+                                        <div *ngIf="loginControl==='START'" class="alert alert-info">
+                                          <strong>connexion en cours ...</strong>
+                                        </div>
+                                        <div *ngIf="loginControl==='SUCCESS'" class="alert alert-success">
+                                            <strong>Succès !</strong>
+                                        </div>
+                                        <div *ngIf="loginControl==='FAIL'" class="alert alert-danger">
+                                            <strong>Echèc!</strong> &nbsp;&nbsp; {{errortext}}
+                                        </div>
+                                  </div>
+                                </ng-container>
+                                
+                                <div class="divider row"></div>
+
+                                <!--Bouton d'authentification-->
+                                <ng-container>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ml-auto">
+                                            <a href="javascript:void(0);" class="btn-lg btn btn-link">&nbsp;</a>
+                                            <button  (click)="onLogin()"  [disabled]="!f.valid" type="button" class="btn btn-lg" style="text-transform: uppercase !important; background: #0a2c77 !important; color: #fff !important; opacity: 1 !important;">Ouvrir la session</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="position-relative form-check" style="margin-top: -20px; margin-left:-30px;">
+                                            <button (click)="getPageRmp()" class="btn-lg btn btn-link">Mot de passe oublié ?</button>
+                                        </div>
+                                    
+                                </ng-container>
+                                
+                            </form>
+                        </div>
+
+                        <div class="row" style="width: 100% !important; margin: auto; margin-top: 50px !important;">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="copyright" style="color:black !important;">
+                                    <span style="font-weight: bold !important; color: #0a2c77 !important;">2021</span> &copy; <span><span style="color: #f07531 !important;"> CNPS:</span> Caisse Nationale de Prévoyance Sociale.</span>
+                                  </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> 
+
+        <!-- Reinitialisation -->
+
+      <div *ngIf="forGet">
+        <div class="h-100">
+                <div class="h-100 no-gutters row">
+                    
+                    <div class="d-none d-lg-block col-lg-4">
+                        <div class="slider-light">
+                            <div class="slick-slider">
+                                <div>
+                                    <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                                        <div class="slide-img-bg" style="background-image: url('assets/images/originals/cnps3.png');"></div>
+                                        <div class="slider-content">
+                                            <h3 style="text-transform: uppercase !important;">&nbsp;</h3>
+                                            <p style="font-size: 20px !important;">
+                                                &nbsp;
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                                        <div class="slide-img-bg" style="background-image: url('assets/images/originals/cnps2.png');"></div>
+                                        <div class="slider-content">
+                                            <h3 style="text-transform: uppercase !important;">&nbsp;</h3>
+                                            <p style="font-size: 20px !important;">
+                                                &nbsp;
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                                        <div class="slide-img-bg" style="background-image: url('assets/images/originals/cnps1.png');"></div>
+                                        <div class="slider-content">
+                                            <h3 style="text-transform: uppercase !important;">&nbsp;</h3>
+                                            <p style="font-size: 20px !important;">
+                                                &nbsp;
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
+                        <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+                            <div class="row" style="width: 100% !important; margin: auto !important; border-bottom:solid darkorange 2px !important;">
+                                <div class="col-xs-6 col-md-4" style="padding-right: 1px !important; padding-left: 1px !important;">
+                                    <img src="assets/images/logo/logo1.png" alt="" class="img-fluid responsive card-img" style="vertical-align: middle !important;">
+                                </div>
+                                <div class="col-xs-6 col-md-8">
+                                    <!--<h2 style="margin-bottom: 0 !important;" style="color: darkorange !important; font-weight: bold !important;">CIPRES </h2>
+                                    <h6>Conférence Interafricaine de Prévoyance Sociale</h6>-->
+                                </div>
+                            </div>
+    
+                            <div class="app-logo"></div>
+                            <h4 class="mb-0">
+                                <span class="d-block">&nbsp;</span>
+                                <span style="font-size: 18px !important; text-transform: uppercase !important; font-weight: bold !important;">Réinitialisation de mot de passe</span></h4>
+                            <h6 class="mt-3">&nbsp;</h6>
+                            <div class="divider row"></div>
+                            <div>
+                                <form  #ff="ngForm">
+    
+                                    <!--Formulaire d'authentification-->
+                                    <ng-container>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group">
+                                                    <label for="usernameTxt" class="">Nom utilisateur</label>
+                                                    <input required id="usernameTxt" name="username" [(ngModel)]="loginDataPwd.username" placeholder="Entrez votre nom d'utilisateur" type="text" class="form-control" style="border-radius: 20px !important;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleEmailTxt" class="">Adresse Email</label>
+                                                    <input required id="exampleEmailTxt" name="email" [(ngModel)]="loginDataPwd.email" placeholder="Email ici..." type="email" class="form-control" style="border-radius: 20px !important;">
+                                                </div>
+                                            </div>
+
+                                            <ng-container *ngIf="Reini">
+                                                    <div class="col-md-12">
+                                                         <div class="alert alert-success">
+                                                            Un mail vous a été envoyé pour la réinitialisation
+                                                         </div>
+                                                    </div>
+                                            </ng-container>
+                                        </div>
+                                    </ng-container>
+                                    
+    
+                                    <!--Progression d'authentification-->
+                                    <ng-container>
+                                        <div class="position-relative form-check">
+                                            <div *ngIf="loginControl==='START'" class="alert alert-info">
+                                              <strong>Connexion en cours ...</strong>
+                                            </div>
+                                            <div *ngIf="loginControl ==='SEARCH'" class="alert alert-warning">
+                                                    <strong>Contrôle de l'identité !</strong>
+                                                </div>
+                                                <div *ngIf="loginControl ==='VERIFIED'" class="alert alert-warning">
+                                                    <strong>Contrôle des autorisations !</strong>
+                                                </div>
+                                            <div *ngIf="loginControl==='SUCCESS'" class="alert alert-success">
+                                                <strong>Succès !</strong>
+                                            </div>
+                                            <div *ngIf="loginControl==='FAIL'" class="alert alert-danger">
+                                                <strong>Echèc!</strong> &nbsp;&nbsp; {{errortext}}
+                                            </div>
+                                      </div>
+                                    </ng-container>
+                                    
+                                    <div class="divider row"></div>
+    
+                                    <!--Bouton d'authentification-->
+                                    <ng-container>
+                                        <div class="d-flex align-items-center">
+                                            <div class="ml-auto">
+                                                <a href="javascript:void(0);" class="btn-lg btn btn-link">&nbsp;</a>
+                                                <button  (click) = "onSubmit()"  [disabled]="!ff.valid" type="button" class="btn btn-lg" style="text-transform: uppercase !important; background: #0a2c77 !important; color: #fff !important; opacity: 1 !important;">Valider</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative form-check" style="margin-top: -20px; margin-left:-30px;">
+                                                <button (click)="retourne()" class="btn-lg btn btn-link" >Retour à la page de connexion</button>
+                                            </div>
+                                    </ng-container>
+                                    
+                                </form>
+                            </div>
+    
+                            <div class="row" style="width: 100% !important; margin: auto; margin-top: 50px !important;">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="copyright" style="color:black !important;">
+                                        <span style="font-weight: bold !important; color: #0a2c77 !important;">2021</span> &copy; <span><span style="color: #f07531 !important;"> CNPS:</span> Caisse Nationale de Prévoyance Sociale.</span>
+                                      </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

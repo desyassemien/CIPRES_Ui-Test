@@ -1,0 +1,123 @@
+<div class="app-container app-theme-white body-tabs-shadow">
+    <app-dash-bord-header></app-dash-bord-header>
+    <div class="app-container">
+        <div class="h-100" style="background: #fff !important;">
+            <div class="no-gutters row" style="background: #fff !important;">
+                <ng-container>
+                    <div class="row" style="width: 100% !important; margin: auto; margin-top: 30px !important;">
+                        <div class="col-xs-12 col-sm-4 col-md-3"></div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <h4 class="dashbord-title">Cipres</h4>
+                            <h5 class="dashbord-sub-title">Conférence Interafricaine de Prévoyance Sociale</h5>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-3"></div> 
+                    </div>
+                    <div class="row" style="width: 100% !important; margin: auto; margin-top: 20px !important;">
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <a [routerLink]="['/layout/immatriculation/employeur/vue-globale']" href="" class="dashbord-menu-link">
+                                <div class="row dashbord-menu-row" style="width: 100% !important; margin: auto;">
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="dashbord-menu-text-card">
+                                            <h5 class="dashbord-menu-title" style="font-size:18px;">Immatriculations des<br/> assujettis</h5>
+                                            <h6 class="dashbord-menu-description"style="font-size:15px;">Consultez les tableaux et les graphes sur l'immatriculation des assujettis</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <img src="assets/images/module-icons/assujettis.png" class="img-fluid img-responsive responsive dashbord-icon" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="dashbord-menu-link">
+                                <div class="row dashbord-menu-row" style="width: 100% !important; margin: auto;">
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="dashbord-menu-text-card">
+                                            <h5 class="dashbord-menu-title" style="font-size:18px;">Recouvrements des<br/> cotisations sociales</h5>
+                                            <h6 class="dashbord-menu-description" style="font-size:15px;">Consultez les tableaux et les graphes sur le recouvrement des cotisations</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <img src="assets/images/module-icons/recouvrement.png" class="img-fluid img-responsive responsive dashbord-icon" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="dashbord-menu-link">
+                                <div class="row dashbord-menu-row" style="width: 100% !important; margin: auto;">
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="dashbord-menu-text-card">
+                                            <h5 class="dashbord-menu-title" style="font-size:18px;">Prestations <br/> sociales</h5>
+                                            <h6 class="dashbord-menu-description" style="font-size:15px;">Consultez les tableaux et les graphes sur les prestations sociales</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <img src="assets/images/module-icons/prestation-sociale.png" class="img-fluid img-responsive responsive dashbord-icon" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <ng-container>
+                            <div class="col-xs-12 col-sm-4 col-md-4 dashbord-menu-chart">
+                                <ngx-charts-pie-chart
+                                    [view]="ngxPieChartsOptions.view"
+                                    [scheme]="ngxPieChartsOptions.colorScheme"
+                                    [results]="donnees"
+                                    [gradient]="ngxPieChartsOptions.gradient"
+                                    [legend]="ngxPieChartsOptions.showLegend"
+                                    [legendPosition]="ngxPieChartsOptions.legendPosition"
+                                    [explodeSlices]="ngxPieChartsOptions.explodeSlices"
+                                    [labels]="ngxPieChartsOptions.showLabels"
+                                    [doughnut]="ngxPieChartsOptions.doughnut"
+                                    (select)="onSelect($event)"
+                                    (activate)="onActivate($event)"
+                                    (deactivate)="onDeactivate($event)">
+                                </ngx-charts-pie-chart>
+                            </div>
+                        </ng-container>
+                        
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <a href="" class="dashbord-menu-link">
+                                <div class="row dashbord-menu-row" style="width: 100% !important; margin: auto;">
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <img src="assets/images/module-icons/gestion-administrative.png" class="img-fluid img-responsive responsive dashbord-icon" />
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="dashbord-menu-text-card">
+                                            <h5 class="dashbord-menu-title-right" style="font-size:18px;font-family: 'Times New Roman', Times, serif;">Gestions <br/> administratives</h5>
+                                            <h6 class="dashbord-menu-description-right" style="font-size:15px;font-family: 'Times New Roman', Times, serif;">Consultez les tableaux et les graphes sur les gestions administratives</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="dashbord-menu-link">
+                                <div class="row dashbord-menu-row" style="width: 100% !important; margin: auto;">
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <img src="assets/images/module-icons/gestion-financiere.png" class="img-fluid img-responsive responsive dashbord-icon" />
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="dashbord-menu-text-card">
+                                            <h5 class="dashbord-menu-title-right" style="font-size:18px;font-family: 'Times New Roman', Times, serif;">Gestions financières <br/> et comptables</h5>
+                                            <h6 class="dashbord-menu-description-right" style="font-size:15px;font-family: 'Times New Roman', Times, serif;">Consultez les tableaux et les graphes sur les gestions financières</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="dashbord-menu-link">
+                                <div class="row dashbord-menu-row" style="width: 100% !important; margin: auto;">
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <img src="assets/images/module-icons/action-sanitaire.png" class="img-fluid img-responsive responsive dashbord-icon" />
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <div class="dashbord-menu-text-card">
+                                            <h5 class="dashbord-menu-title-right" style="font-size:18px; font-family: 'Times New Roman', Times, serif;">Actions <br/> sanitaires sociales</h5>
+                                            <h6 class="dashbord-menu-description-right" style="font-size:15px;font-family: 'Times New Roman', Times, serif;">Consultez les tableaux et les actions sanitaires</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+
+<div class="app-page-title app-menu-card">
+    <div class="mb-3 card menu-tab-card" style="margin-bottom: 1px !important; border-radius: 1px !important; border-bottom: solid #f07531 2px !important;">
+        <div class="card-header header-men-card" style="background: #0d3562 !important;">
+            <ul class="nav nav-justified">
+                <li class="nav-item"><a data-toggle="tab" href="#tab-eg7-0" class="active nav-link navigation-lien">Employeurs</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#tab-eg7-1" class="nav-link navigation-lien">Travailleurs</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#tab-eg7-2" class="nav-link navigation-lien">Autres</a></li>
+            </ul>
+        </div>
+        <div class="card-body" style="margin-bottom: 3px !important; padding: 0rem !important;">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-eg7-0" role="tabpanel">
+                   <ng-container>
+                      <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark" style="background: #fff !important;">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon" style="background: #0d3562 !important;"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto" style="width: 100% !important;">
+                            <ng-container *ngFor = "let m of menuEmployeur">
+                              <li [class]="'nav-item sub-navitem tEmployeur' + m.id" [id] ="'tEmployeur' + m.id">
+                                <a [routerLink]="m.path" class="nav-link" href="#" data-toggle="tooltip" data-placement = "bottom" data-original-title = "" [title] = "m.title">
+                                  <i [class]="m.icon" aria-hidden="true"></i>
+                                  <ng-container *ngIf = "m.id === 1 || m.id === 2">
+                                    {{m.tableau}}
+                                  </ng-container>
+                                  <ng-container *ngIf = "m.id > 2">
+                                    {{m.tableau}} <br /> {{m.title.substring(0,20)}} ...
+                                  </ng-container>
+                                </a>
+                              </li>
+                            </ng-container>
+                          </ul>
+                        </div>
+                      </nav>
+                   </ng-container>
+                </div>
+                <div class="tab-pane" id="tab-eg7-1" role="tabpanel">
+                    <ng-container>
+                      <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark" style="background: #fff !important;">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon" style="background: #0d3562 !important;"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto" style="width: 100% !important;">
+                            <ng-container *ngFor = "let m of menuTravailleur">
+                              <li class="nav-item sub-navitem" [id] ="'tTravailleur' + m.id">
+                                <a [routerLink]="m.path" class="nav-link" href="#" data-toggle="tooltip" data-placement = "bottom" data-original-title = "" [title] = "m.title">
+                                  <i [class]="m.icon" aria-hidden="true"></i>
+                                  <ng-container *ngIf = "m.id === 1 || m.id === 2">
+                                    {{m.tableau}}
+                                  </ng-container>
+                                  <ng-container *ngIf = "m.id > 2">
+                                    {{m.tableau}} <br /> {{m.title.substring(0,20)}} ...
+                                  </ng-container>
+                                </a>
+                              </li>
+                            </ng-container>
+                          </ul>
+                        </div>
+                      </nav>
+                    </ng-container>
+                </div>
+                <div class="tab-pane" id="tab-eg7-2" role="tabpanel">
+                    <p>Ajoutez le menu ...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="page-title-wrapper" style="background: black !important;">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
+            </div>
+            <div>
+                Analytics Dashboard
+                <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.</div>
+            </div>
+        </div> 
+    </div>-->
+</div>  

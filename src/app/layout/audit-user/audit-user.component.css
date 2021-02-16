@@ -1,0 +1,33 @@
+table{
+    width: 100%;
+   text-decoration-color: black;
+     background-color: white; 
+     color:black;
+  }
+  
+  table th, table td{
+      color:black;
+  }
+  
+  .mat-paginator {
+      color:black;
+      background-color: #FAFAFA;
+      
+  }
+  
+  .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+      color: black;
+      display: inline-block;
+      background-color: #00A651;
+    }
+  
+    .filtre{
+        color:white;
+        
+    }
+    
+  
+  
+  

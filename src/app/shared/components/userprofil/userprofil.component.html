@@ -1,0 +1,131 @@
+<!-- Main Wrapper -->
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+	<!-- Header -->
+	<app-profil-header></app-profil-header>
+	<!-- /Header -->
+	<div class="app-main">
+		<!-- Sidebar -->  
+		<app-profil-side-bar></app-profil-side-bar> 
+		<!-- /Sidebar -->
+		<!-- Page Wrapper -->
+		<div class="app-main__outer">
+      		<!--contenr  -->
+			<div class="app-main__inner">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="main-card mb-3 card">
+							<div class="card-body">
+								<h5 class="card-title" style="color: black;font-weight:bold;font-size:13px;">Modifier le profil</h5>
+								<br/>
+								<div class="row">
+									<div class="col-md-3">
+										<img class="img-thumbnail float-left" alt="User Image"  src="{{userImage ? url+userImage :'../../../../../../assets/images/avatars/avatar.png'}}">
+									</div>
+									<div class="col-md-3">
+										<h4 style="color: black;" class="user-name mb-0">{{username}}</h4>
+										<h5 class="text-muted mb-0">{{getRole()}}</h5>
+										<h4><i class="fa fa-flag"></i> {{userPays}}</h4>
+										<input type="file" (change)="onFileChanged($event)">
+										<button type="submit" (click)="onUpload()" class="btn btn-primary" style="margin-top:30px;">Valider</button>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>	
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mb-3 card">
+							<div class="card-body">
+								<ul class="tabs-animated-shadow nav-justified tabs-animated nav">
+									<li class="nav-item">
+										<a role="tab" class="nav-link show active" id="tab-c1-0" data-toggle="tab"
+											href="#tab-animated1-0" aria-selected="true">
+											<span class="nav-text">A propos</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a role="tab" class="nav-link show" id="tab-c1-1" data-toggle="tab" href="#tab-animated1-1"
+											aria-selected="false">
+											<span class="nav-text">Changer mot de passe</span>
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane show active" id="tab-animated1-0" role="tabpanel">
+										<br />
+										<ul class="list-inline">
+											<li class="list-inline-item">Nom Utilisateur : </li>
+											<li class="list-inline-item">{{username}}</li>
+										</ul>
+
+										<ul class="list-inline">
+											<li class="list-inline-item">Rôle(s) : </li>
+											<li class="list-inline-item">{{getRole()}}</li>
+										</ul>
+
+										<ul class="list-inline">
+											<li class="list-inline-item">Département : </li>
+											<li class="list-inline-item">{{userDepartement}}</li>
+										</ul>
+										<ul class="list-inline">
+											<li class="list-inline-item">Adresse email : </li>
+											<li class="list-inline-item">{{userEmail}}</li>
+										</ul>
+									</div>
+									<div class="tab-pane show" id="tab-animated1-1" role="tabpanel">
+										<br />
+										<form #fPChange="ngForm" (ngSubmit)="OnValiderModalMp()">
+											<div class="form-group">
+												<label>Ancien mot de passe</label>
+												<input type="password" name="olpassord" class="form-control" #OldMp="ngModel"
+													[(ngModel)]="FormMpMod.password" class='form-control' style='font-weight:bold'
+													value=''>
+											</div>
+
+											<div class="form-group">
+												<label>Nouveau Mot de passe</label>
+												<input type="password" #NewMp="ngModel" name="newPassword"
+													(blur)="VerifierMo(FormMpMod.newPassword)" [(ngModel)]="FormMpMod.newPassword"
+													class='form-control' value='validation' style='font-weight:bold;color:black'
+													name='motpasse' required>
+											</div>
+											<div class="form-group">
+												<div class="alert alert-danger" *ngIf="nombreErreur>0">
+													{{erreurMessage}}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label>Confirmer le mot de passe</label>
+												<input type="password" name="confirmPassowrd" #ConfMp="ngModel"
+													[(ngModel)]="FormMpMod.confirmPassword" class='form-control'
+													style='font-weight:bold' name='motpasse' required>
+											</div>
+											<div class="form-group">
+												<div class="alert alert-danger" *ngIf="nombreErreur==5">
+													{{erreurMessage}}
+												</div>
+											</div>
+
+											<div class="text-right">
+												<button class="btn btn-primary" id="reset" type="submit" (click)="onReset()"
+													style="margin-right:10px; color: black;">Annuler</button>
+												<button class="btn btn-primary" id="valider">Enregistrer</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		   <!-- content -->
+		</div>
+		<!-- /Page Wrapper -->
+	</div>
+</div>

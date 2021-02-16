@@ -1,0 +1,21 @@
+<!-- Main Wrapper -->
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+	<!-- Header -->
+	<app-header></app-header>
+	<!-- /Header -->
+	<div class="app-main">
+		<!-- Sidebar -->  
+		<app-side-bar></app-side-bar>
+		<!-- /Sidebar -->
+ 
+        <!-- Page Wrapper -->
+        <div class="app-main__outer">
+            <div class="app-main__inner">
+                <app-menu-immatriculation></app-menu-immatriculation>
+                <router-outlet></router-outlet>
+            </div>    
+        </div>
+		<!-- /Page Wrapper -->
+	</div>
+</div>
+<!-- /Main Wrapper -->

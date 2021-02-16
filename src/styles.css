@@ -1,0 +1,386 @@
+
+/* You can add global styles to this file, and also import other style files */
+
+.pointer-link{
+    cursor: pointer
+}
+.slick-next, .slick-prev{
+    display: none !important;
+}
+
+.logo-src {
+    height: 50px !important;
+    width: 150px !important;
+}
+
+.app-menu-card {
+    padding: 2px !important;
+    margin: -30px -30px 30px !important;
+    position: relative !important;
+}
+
+.menu-tab-card{
+    margin-bottom: 1px !important;
+}
+
+.header-men-card {
+    display: flex;
+    align-items: center;
+    border-bottom-width: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: .625rem;
+    height: 3rem !important;
+}
+
+.sub-navitem{
+    /*width: 16.66% !important;*/
+    /*border-right: dotted rgba(255,255,255,0.5) 1px !important;*/
+    border-right: dotted #666 1px !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    /*color: rgba(255,255,255,0.5) !important;*/
+    color: #333 !important;
+}
+
+.navigation-lien{
+    color: #fff !important;
+    text-transform: uppercase !important;
+}
+
+.sidebar-icon {
+    text-align: center;
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 34px !important;
+    position: absolute !important;
+    left: 5px !important;
+    top: 50% !important;
+    margin-top: -17px !important;
+    font-size: 1.5rem !important;
+    transition: color 300ms !important;
+}
+
+.sidebar-li{
+    border-bottom: solid silver 1px !important;
+}
+
+
+.majuscule{
+    text-transform: uppercase !important;
+}
+
+.alignementDroit{
+    text-align: right !important;
+}
+
+.alignementCentre{
+    text-align: center !important;
+}
+
+.table-header-cells{
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: #f07531 !important;
+    color: #fff !important;
+}
+
+.tab-colonne{
+    color: #333 !important;
+}
+
+.total-cols{
+    font-weight: bold !important;
+    color: #0d3562 !important;
+    background:#eee !important ;
+}
+/*.total-cols-immatriculation{
+    font-weight: bold !important;
+    color: #666 !important;
+    background:#fbe21c !important ;
+}*/
+
+.th-immatriculation{
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: #0d3562 !important;
+    color: #fff !important;
+}
+.th-actif{
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: #5AA454 !important;
+    color: #fff !important;
+}
+.th-reactif{
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: #fbe21c !important;
+    color: #666 !important;
+}
+.th-suspendu{
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: silver !important;
+    color: #666 !important;
+}
+.th-radie{
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background:  #e02222 !important;
+    color:#fff !important;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #0d3562 !important;
+    border-color: #0d3562 !important;
+}
+.btn-warning {
+    color: #212529;
+    background-color: #f07531 !important;
+    border-color: #f07531 !important; /*#5AA454*/
+}
+.btn-success {
+    color: #fff;
+    background-color: #5AA454 !important;
+    border-color: #5AA454 !important;
+}
+
+.charts-icons{
+    width: 30px !important;
+}
+.btn-chart{
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+.btn-chart:hover{
+    background: #666 !important;
+}
+
+.btn-chart-active, .btn-chart-active-immat, .btn-chart-active-actif, .btn-chart-active-reactive, .btn-chart-active-suspendu, .btn-chart-active-radie {
+    background: #666 !important;
+}
+
+
+.div-frontiere{
+    height: 20px !important;
+    /*background-color: #f1f4f6 !important;*/
+    border-bottom: solid silver 1px !important;
+    margin-bottom: 10px !important;
+}
+
+.legendTitle{
+    font-size: 1.1rem !important;
+    font-weight: normal !important;
+    color: #666 !important;
+    border-bottom: solid silver 1px !important;
+    text-transform: uppercase !important;
+    border-bottom-width: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: .625rem;
+    height: 2.5rem;
+}
+
+.legendSpan{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.main-th{
+    text-align: center !important;
+    background: #f07531 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+}
+
+.cip_center_sub{
+    text-align: center !important;
+    background: silver !important;
+    /*background: #fbe21c !important;*/
+}
+
+.th-prive-label{
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    color: #666 !important;
+    border-bottom: solid silver 1px !important ;
+}
+.th-prive-value{
+    font-weight: bold !important;
+    color: #666 !important;
+    border-bottom: solid silver 1px !important ;
+    text-align: right !important;
+}
+.th-prive-sub-value{
+    text-align: right !important;
+}
+.total-label{
+    background: silver !important;
+    text-transform: uppercase !important;
+    /*background: #666 !important;*/
+    color: #666 !important;
+    font-weight: bold !important;
+}
+.total-valeur{
+    background: silver !important;
+    /*background: #666 !important;*/
+    color: #666 !important;
+    font-weight: bold !important;
+    text-align: right !important;
+}
+.total-vartical{
+    background: silver !important;
+    /*background: #666 !important;*/
+    color: #666 !important;
+    font-weight: bold !important;
+    text-align: right !important;
+}
+
+.card-charts{
+    width: 950px !important; 
+    margin: auto; 
+    overflow-x: auto !important; 
+    border: solid silver 1px !important; 
+    margin-top: 20px !important;
+}
+
+.card-charts-dispatch{
+    width: 100% !important;
+    margin: auto;
+    overflow-x: auto !important; 
+    border: solid silver 1px !important; 
+    margin-top: 20px !important;
+    background: #fff !important;
+}
+
+.charts-title{
+    text-align: center !important;
+    color: #666 !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    margin-top: 20px !important;
+}
+.charts-title-3{
+    text-align: center !important;
+    color: #666 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    margin-top: 20px !important;
+}
+.th-lab{
+    border-bottom: none !important;
+}
+
+.active-menu{
+    background: #e0f3ff !important;
+}
+
+.sub-navitem:hover{
+    background: #e0f3ff !important;
+}
+
+.search-form-row{
+    width: 100% !important; 
+    margin: auto; 
+    border: solid silver 2px !important;
+}
+.search-btn{
+    text-transform: uppercase !important;
+}
+
+.dashbord-title{
+    font-size: 50px !important; 
+    text-align: center !important;
+    color: #0d3562 !important;
+    font-weight: bold !important;
+    width: 100% !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dashbord-sub-title{
+    text-align: center !important;
+    color: #666 !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dashbord-icon{
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    box-shadow: 0 0.125rem 0.625rem #666, 0 0.0625rem 0.125rem #fff;
+}
+
+.dashbord-menu-row{
+    margin-bottom: 15px !important;
+    border-bottom: solid silver 1px !important;
+}
+
+.dashbord-menu-title{
+    text-align: right !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+
+.dashbord-menu-description{
+    text-align: right !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+
+.dashbord-menu-link{
+    color: #666 !important;
+    text-decoration: none !important;
+}
+
+.dashbord-menu-link:hover{
+    color: #f07531 !important;
+}
+
+
+/*.custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+  }
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }*/
+
+  .calendar-card{
+      height: 250px !important;
+      background: whitesmoke !important;
+  }
+
+  .active{
+      border-bottom: solid darkorange 2 !important;
+  }
+
+  .step-row{
+      margin-top: 30px !important;
+  }
+
+  .btn-next{
+      float: right !important;
+      text-transform: uppercase !important;
+      color: #fff !important;
+  }
+
+  .btn-previous{
+      background: gray !important;
+      color: #fff !important;
+      float: left !important;
+      margin-right: 20px !important;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

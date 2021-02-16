@@ -1,0 +1,113 @@
+<div class="tabs-animation">
+    <div class="mb-3 card">
+        <div class="no-gutters row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                <ng-container>
+                    <div class="card-body">
+                        <aw-wizard [disableNavigationBar] = "true">
+
+                            <aw-wizard-step stepTitle="Tableau 1">
+                                <ng-container>
+                                    <div class="row btn-row" style="margin-top: 20px !important; width: 100% !important; margin: auto;">
+                                        <div class="col-xs-12 col-md-12">
+                                            <legend style="border-bottom: solid #666 2px !important;"></legend>
+                                            <button id="btn-nexted" class="btn btn-warning btn-next" style="border:none !important; float:right !important; text-transform: uppercase !important; margin-bottom: 30px !important;" type="button" awNextStep>
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                            Suivant
+                                            </button>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container>
+                                    <div class="row step-row" style="width: 100% !important; margin: auto;">
+                                        <div class="col-xs-12 col-md-12">
+                                            <app-tableau1-employeur [masquer]="masquer"></app-tableau1-employeur>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </aw-wizard-step>
+
+                            <aw-wizard-step stepTitle="Tableau 2">
+                                <ng-container>
+                                    <div class="row btn-row" style="margin-top: 20px !important; width: 100% !important; margin: auto;">
+                                        <ng-container>
+                                            <div class="col-xs-12 col-md-12">
+                                                <legend style="border-bottom: solid #666 2px !important;"></legend>
+                                                <button class="btn btn-default btn-previous btn-sm" id="btn-preving" style="border: none !important; margin-bottom: 30px !important; text-transform: uppercase !important;" type="button" awPreviousStep>
+                                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                                    Précédent
+                                                </button>
+                                                <button class="btn btn-warning btn-next btn-sm" style="border:none !important; float:right !important; margin-bottom: 30px !important; text-transform: uppercase !important;" type="button" awNextStep>
+                                                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                  Suivant
+                                                </button>
+                                            </div>
+                                        </ng-container>
+                                      </div>
+                                </ng-container>
+                                <ng-container>
+                                    <div class="row step-row" style="width: 100% !important; margin: auto;">
+                                        <div class="col-xs-12 col-md-12">
+                                            <app-tableau2-employeur [masquer]="masquer"></app-tableau2-employeur>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </aw-wizard-step>
+
+                            <aw-wizard-step stepTitle="Tableau 3">
+                                <ng-container>
+                                    <div class="row btn-row" style="margin-top: 20px !important; width: 100% !important; margin: auto;">
+                                        <ng-container>
+                                            <div class="col-xs-12 col-md-12">
+                                                <legend style="border-bottom: solid #666 2px !important;"></legend>
+                                                <button class="btn btn-default btn-previous btn-sm" id="btn-preving" style="border: none !important; margin-bottom: 30px !important; text-transform: uppercase !important;" type="button" awPreviousStep>
+                                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                                    Précédent
+                                                </button>
+                                                <button class="btn btn-warning btn-next btn-sm" style="border:none !important; float:right !important; margin-bottom: 30px !important; text-transform: uppercase !important;" type="button" awNextStep>
+                                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                Suivant
+                                                </button>
+                                            </div>
+                                        </ng-container>
+                                      </div>
+                                </ng-container>
+                                <ng-container>
+                                    <div class="row step-row" style="width: 100% !important; margin: auto;">
+                                        <div class="col-xs-12 col-md-12">
+                                            <app-tableau3-employeur [masquer]="masquer" ></app-tableau3-employeur>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </aw-wizard-step>
+
+                            <aw-wizard-step stepTitle="Tableau 4">
+                                <ng-container>
+                                    <div class="row btn-row" style="margin-top: 20px !important; width: 100% !important; margin: auto;">
+                                        <ng-container>
+                                            <div class="col-xs-12 col-md-12">
+                                                <legend style="border-bottom: solid #666 2px !important;"></legend>
+                                                <button class="btn btn-default btn-previous btn-sm" id="btn-preving" style="border: none !important; margin-bottom: 30px !important; text-transform: uppercase !important;" type="button" awPreviousStep>
+                                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                                    Précédent
+                                                </button>
+                                            </div>
+                                        </ng-container>
+                                      </div>
+                                </ng-container>
+                                <ng-container>
+                                    <div class="row step-row" style="width: 100% !important; margin: auto;">
+                                        <div class="col-xs-12 col-md-12">
+                                            <app-tableau4-employeur [masquer]="masquer"></app-tableau4-employeur>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </aw-wizard-step>
+                        </aw-wizard>
+                        
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
